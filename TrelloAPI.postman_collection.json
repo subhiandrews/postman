@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "b9e677c2-39f3-4f9e-9327-c4efeca1a200",
+		"name": "Trello API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21462857"
+	},
+	"item": [
+		{
+			"name": "GetAllBoards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/members/me/boards?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"members",
+						"me",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}&name={{BoardName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						},
+						{
+							"key": "name",
+							"value": "{{BoardName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "650f34d3f85c9a438966b0c0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create TODO list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/lists?name=TODO&idBoard=650f766a092ea1d30697d779&key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TODO"
+						},
+						{
+							"key": "idBoard",
+							"value": "650f766a092ea1d30697d779"
+						},
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create DONE list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/lists?name=DONE&idBoard=650f766a092ea1d30697d779&key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "DONE"
+						},
+						{
+							"key": "idBoard",
+							"value": "650f766a092ea1d30697d779"
+						},
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Card in TODO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards?name=Trello API Lesson&idList=650f796c6166f0eb3cc88846&key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Trello API Lesson"
+						},
+						{
+							"key": "idList",
+							"value": "650f796c6166f0eb3cc88846"
+						},
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/:cardid?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":cardid"
+					],
+					"query": [
+						{
+							"key": "cardid",
+							"value": "650f7b95ef48c743978954cd",
+							"disabled": true
+						},
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "cardid",
+							"value": "650f7b95ef48c743978954cd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move card to DONE list",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/cards/:cardid?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}&idList=650f796c6166f0eb3cc88846",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						":cardid"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						},
+						{
+							"key": "idList",
+							"value": "650f796c6166f0eb3cc88846"
+						}
+					],
+					"variable": [
+						{
+							"key": "cardid",
+							"value": "650f7b95ef48c743978954cd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/1/boards/:id?key={{TrelloAPIKey}}&token={{TrelloAPIToken}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{TrelloAPIKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{TrelloAPIToken}}"
+						},
+						{
+							"key": "idList",
+							"value": "650f796c6166f0eb3cc88846",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "650f34d3f85c9a438966b0c0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.trello.com",
+			"type": "string"
+		},
+		{
+			"key": "TrelloAPIToken",
+			"value": "YOUR API TOKEN",
+			"type": "string"
+		},
+		{
+			"key": "TrelloAPIKey",
+			"value": "YOUR API KEY",
+			"type": "string"
+		},
+		{
+			"key": "OAuthTrelloSecret",
+			"value": "YOUR API SECRET",
+			"type": "string"
+		},
+		{
+			"key": "BoardName",
+			"value": "Learning Postman"
+		}
+	]
+}
